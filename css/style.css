@@ -1,0 +1,68 @@
+/* HTML Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utility Classes */
+
+
+/* Font Classes */
+.primary-font{
+  color: red;
+}
+
+/* Main Head */
+#main-heading{
+  text-align: center;
+  padding-top: 4rem;
+  margin-top: 10px;
+}
+
+/* Sub Head */
+#class-h2{
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 20px;
+  color: red;
+}
+
+/* Navbar */
+#main-nav{
+  display: flex;
+  background: #453F3C;
+}
+
+.nav-item{
+  display: inline-block;
+  padding: 20px;
+  margin-right: 20px;
+  background-color: rgba(121, 114, 112, 0.85 );
+  border-radius: 5px;
+}
+
+.nav-item .current{
+  background-color: red;
+}
+
+.nav-item a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Character Info Section */
+#char-info{
+  display: flex;
+  flex-direction: column;
+}
+
+#char-form input{
+  display: block;
+  width: 33%;
+  border-radius: 5px;
+  border: 1px solid #333;
+  padding: 5px;
+  margin: 10px;
+}
