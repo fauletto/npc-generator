@@ -1,27 +1,31 @@
 /* HTML Reset */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* Utility Classes */
-
+.container {
+  background-color: #fff;
+  padding: 100px;
+  margin: auto;
+}
 
 /* Font Classes */
-.primary-font{
+.primary-font {
   color: red;
 }
 
 /* Main Head */
-#main-heading{
+#main-heading {
   text-align: center;
   padding-top: 4rem;
   margin-top: 10px;
 }
 
 /* Sub Head */
-#class-h2{
+#class-h2 {
   text-align: center;
   padding: 1rem;
   margin-bottom: 20px;
@@ -29,40 +33,59 @@
 }
 
 /* Navbar */
-#main-nav{
+#main-nav {
   display: flex;
-  background: #453F3C;
+  background: #453f3c;
 }
 
-.nav-item{
+.nav-item {
   display: inline-block;
   padding: 20px;
   margin-right: 20px;
-  background-color: rgba(121, 114, 112, 0.85 );
+  background-color: rgba(121, 114, 112, 0.85);
   border-radius: 5px;
 }
 
-.nav-item .current{
+.nav-item .current {
   background-color: red;
 }
 
-.nav-item a{
+.nav-item a {
   text-decoration: none;
   font-size: 1.5rem;
   color: #fff;
 }
 
 /* Character Info Section */
-#char-info{
+#char-info {
   display: flex;
   flex-direction: column;
 }
 
-#char-form input{
+#char-form input {
   display: block;
   width: 33%;
   border-radius: 5px;
   border: 1px solid #333;
   padding: 5px;
   margin: 10px;
+}
+
+/* Randomize button */
+#randomizeAll {
+  display: block;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  background-color: #453f3c;
+  color: #fff;
+}
+
+#randomizeAll:hover {
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
 }
