@@ -16,16 +16,6 @@ nameInput.addEventListener('input', function (e) {
   console.log(nameInput.value);
 });
 
-// Update H2 with character race in real time
-// classInput.addEventListener('input', function (e) {
-//   if(classInput.value == ''){
-//     subheading.innerText = "";
-//   }else{
-//     subheading.innerText = `the ${getRace.value}`;
-//   }
-//   console.log(nameInput.value);
-// });
-
 // Get random number from 0-n
 let getRandNumber = (n) =>{
   return Math.floor(Math.random() * n);
@@ -37,96 +27,60 @@ const npcPowerLevel = ["Weak", "Average", "Strong", "Extreme", "Demigod"];
 const npcGender = ["Male", "Female"];
 const npcTrait = ["Selfish", "Altruistic", "Confident", "Overconfident", "Naive", "Wise", "Friendly", "Quiet", "Shy", "Flirty"];
 const npcBackground = ["Raised in a village", "Found a magic sword", "Grew rich from an inheritance", "Has many lovers", "Wants revenge against his enemies", "Raised in an orphange", "Has a curse", "Sired by a great hero", "Sired by a great villain", "Works in a shop"];
+//Declare lists of random male names
+const humanMaleNames = ["Frank", "Ryan", "Robert", "Christopher", "Harold", "Arthur", "Gilbert"];
+const halflingMaleNames = ["John", "Paul", "George", "Ringo", "Frodo", "Samwise", "Peregrin", "Meriadoc", "Bilbo"];
+const dwarfMaleNames = ["Gimli", "Gloin", "Thorin", "Dwalin"];
+const elfMaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
+const orcMaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
+const gnomeMaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
+//Declare lists of random female names
+const humanFemaleNames = ["Frank", "Ryan", "Robert", "Christopher", "Harold", "Arthur", "Gilbert"];
+const halflingFemaleNames = ["John", "Paul", "George", "Ringo", "Frodo", "Samwise", "Peregrin", "Meriadoc", "Bilbo"];
+const dwarfFemaleNames = ["Gimli", "Gloin", "Thorin", "Dwalin"];
+const elfFemaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
+const orcFemaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
+const gnomeFemaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
+let charName;
 
 //Get the race and gender of the character to determine which name lists to pull from
 const getRace = npcRace[getRandNumber(npcRace.length)];
 const getGender = npcGender[getRandNumber(npcGender.length)];
-//Random name function
+
+//Generate a random name from a list of names
 const getName = () => {
-  let charName;
   if (getRace === "Human" && getGender === "Male") {
-    charName = humanMaleNameGen();
+    charName = humanMaleNames[getRandNumber(humanMaleNames.length)];
   } else if (getRace === "Halfling" && getGender === "Male"){
-    charName = halfingMaleNameGen();
+    charName = halflingMaleNames[getRandNumber(halflingMaleNames.length)];
   } else if (getRace === "Dwarf" && getGender === "Male"){
-    charName = dwarfMaleNameGen();
+    charName = dwarfMaleNames[getRandNumber(dwarfMaleNames.length)];
   } else if (getRace === "Elf" && getGender === "Male"){
-    charName = elfMaleNameGen();
+    charName = elfMaleNames[getRandNumber(elfMaleNames.length)];
   } else if (getRace === "Orc" && getGender === "Male"){
-    charName = orcMaleNameGen();
+    charName = orcMaleNames[getRandNumber(orcMaleNames.length)];
   } else if (getRace === "Gnome" && getGender === "Male"){
-    charName = gnomeMaleNameGen();
+    charName = gnomeMaleNames[getRandNumber(gnomeMaleNames.length)];
   } else if (getRace === "Human" && getGender === "Female") {
-    charName = humanFemaleNameGen();
+    charName = humanFemaleNames[getRandNumber(humanFemaleNames.length)];
   } else if (getRace === "Halfling" && getGender === "Female"){
-    charName = halfingFemaleNameGen();
+    charName = halflingFemaleNames[getRandNumber(halflingFemaleNames.length)];
   } else if (getRace === "Dwarf" && getGender === "Female"){
-    charName = dwarfFemaleNameGen();
+    charName = halflingFemaleNames[getRandNumber(halflingFemaleNames.length)];
   } else if (getRace === "Elf" && getGender === "Female"){
-    charName = elfFemaleNameGen();
+    charName = elfFemaleNames[getRandNumber(elfFemaleNames.length)];
   } else if (getRace === "Orc" && getGender === "Female"){
-    charName = orcFemaleNameGen();
+    charName = orcFemaleNames[getRandNumber(orcFemaleNames.length)];
   } else if (getRace === "Gnome" && getGender === "Female"){
-    charName = gnomeFemaleNameGen();
+    charName = gnomeFemaleNames[getRandNumber(gnomeFemaleNames.length)];
   }
   return charName;
 };
 
-//Declare lists of random male names
-const humanMaleNameGen = () =>{
-  const humanMaleNames = ["Frank", "Ryan", "Robert", "Christopher", "Harold", "Arthur", "Gilbert"];
-  heading.innerText = `NPC Character Sheet for ${humanMaleNames[getRandNumber(humanMaleNames.length)]}`;
-}
-const halfingMaleNameGen = () =>{
-  const halflingMaleNames = ["John", "Paul", "George", "Ringo", "Frodo", "Samwise", "Peregrin", "Meriadoc", "Bilbo"];
-  heading.innerText = `NPC Character Sheet for ${halflingMaleNames[getRandNumber(halflingMaleNames.length)]}`;
-}
-const dwarfMaleNameGen = () =>{
-  const dwarfMaleNames = ["Gimli", "Gloin", "Thorin", "Dwalin"];
-  heading.innerText = `NPC Character Sheet for ${dwarfMaleNames[getRandNumber(dwarfMaleNames.length)]}`;
-}
-const elfMaleNameGen = () =>{
-  const elfMaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
-  heading.innerText = `NPC Character Sheet for ${elfMaleNames[getRandNumber(elfMaleNames.length)]}`;
-}
-const orcMaleNameGen = () =>{
-  const orcMaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
-  heading.innerText = `NPC Character Sheet for ${orcMaleNames[getRandNumber(orcMaleNames.length)]}`;
-}
-const gnomeMaleNameGen = () =>{
-  const gnomeMaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
-  heading.innerText = `NPC Character Sheet for ${gnomeMaleNames[getRandNumber(gnomeMaleNames.length)]}`;
-}
-
-//Declare lists of random female names
-const humanFemaleNameGen = () =>{
-  const humanFemaleNames = ["Frank", "Ryan", "Robert", "Christopher", "Harold", "Arthur", "Gilbert"];
-  heading.innerText = `NPC Character Sheet for ${humanFemaleNames[getRandNumber(humanFemaleNames.length)]}`;
-}
-const halfingFemaleNameGen = () =>{
-  const halflingFemaleNames = ["John", "Paul", "George", "Ringo", "Frodo", "Samwise", "Peregrin", "Meriadoc", "Bilbo"];
-  heading.innerText = `NPC Character Sheet for ${halflingFemaleNames[getRandNumber(halflingFemaleNames.length)]}`;
-}
-const dwarfFemaleNameGen = () =>{
-  const dwarfFemaleNames = ["Gimli", "Gloin", "Thorin", "Dwalin"];
-  heading.innerText = `NPC Character Sheet for ${dwarfFemaleNames[getRandNumber(dwarfFemaleNames.length)]}`;
-}
-const elfFemaleNameGen = () =>{
-  const elfFemaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
-  heading.innerText = `NPC Character Sheet for ${elfFemaleNames[getRandNumber(elfFemaleNames.length)]}`;
-}
-const orcFemaleNameGen = () =>{
-  const orcFemaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
-  heading.innerText = `NPC Character Sheet for ${orcFemaleNames[getRandNumber(orcFemaleNames.length)]}`;
-}
-const gnomeFemaleNameGen = () =>{
-  const gnomeFemaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
-  heading.innerText = `NPC Character Sheet for ${gnomeFemaleNames[getRandNumber(gnomeFemaleNames.length)]}`;
-};
-
-// Randomize race/name
+// Randomize race/gender/name
 randomizeAllButton.addEventListener('click', function(){
   getName();
+  heading.innerText = `Character sheet for ${charName}`
   subheading.innerText = `the ${getGender} ${getRace}`;
   biography.innerText = `${charName} is stupid.`
 });
