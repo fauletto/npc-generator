@@ -6,16 +6,6 @@ const subheading = document.querySelector('#class-h2');
 const randomizeAllButton = document.querySelector('#randomizeAll');
 const biography = document.querySelector('#backgroundInfo');
 
-// Update H1 with character name in real time
-nameInput.addEventListener('input', function (e) {
-  if(nameInput.value == ''){
-    heading.innerText = "RPG Character Generator";
-  }else{
-    heading.innerText = `Character Sheet for ${nameInput.value}`;
-  }
-  console.log(nameInput.value);
-});
-
 // Get random number from 0-n
 let getRandNumber = (n) =>{
   return Math.floor(Math.random() * n);
