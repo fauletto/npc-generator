@@ -38,40 +38,45 @@ const elfFemaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
 const orcFemaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
 const gnomeFemaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
 let charName;
+let charGender;
+let charRace;
+let charBio;
+let charPower;
+let charTrait;
 
 //Get the race and gender of the character to determine which name lists to pull from
-const getRace = npcRace[getRandNumber(npcRace.length)];
-const getGender = npcGender[getRandNumber(npcGender.length)];
-const getBiography = npcBackground[getRandNumber(npcBackground.length)];
-const getPower = npcPowerLevel[getRandNumber(npcPowerLevel.length)];
-const getTrait = npcTrait[getRandNumber(npcTrait.length)];
+const getRace = () => {charRace = npcRace[getRandNumber(npcRace.length)]};
+const getGender = () => {charGender = npcGender[getRandNumber(npcGender.length)]};
+const getBiography = () => {charBio = npcBackground[getRandNumber(npcBackground.length)]};
+const getPower = () => {charPower = npcPowerLevel[getRandNumber(npcPowerLevel.length)]};
+const getTrait = () => {charTrait = npcTrait[getRandNumber(npcTrait.length)]};
 
 
 //Generate a random name from a list of names
 const getName = () => {
-  if (getRace === "Human" && getGender === "Male") {
+  if (charRace === "Human" && charGender === "Male") {
     charName = humanMaleNames[getRandNumber(humanMaleNames.length)];
-  } else if (getRace === "Halfling" && getGender === "Male"){
+  } else if (charRace === "Halfling" && charGender === "Male"){
     charName = halflingMaleNames[getRandNumber(halflingMaleNames.length)];
-  } else if (getRace === "Dwarf" && getGender === "Male"){
+  } else if (charRace === "Dwarf" && charGender === "Male"){
     charName = dwarfMaleNames[getRandNumber(dwarfMaleNames.length)];
-  } else if (getRace === "Elf" && getGender === "Male"){
+  } else if (charRace === "Elf" && charGender === "Male"){
     charName = elfMaleNames[getRandNumber(elfMaleNames.length)];
-  } else if (getRace === "Orc" && getGender === "Male"){
+  } else if (charRace === "Orc" && charGender === "Male"){
     charName = orcMaleNames[getRandNumber(orcMaleNames.length)];
-  } else if (getRace === "Gnome" && getGender === "Male"){
+  } else if (charRace === "Gnome" && charGender === "Male"){
     charName = gnomeMaleNames[getRandNumber(gnomeMaleNames.length)];
-  } else if (getRace === "Human" && getGender === "Female") {
+  } else if (charRace === "Human" && charGender === "Female") {
     charName = humanFemaleNames[getRandNumber(humanFemaleNames.length)];
-  } else if (getRace === "Halfling" && getGender === "Female"){
+  } else if (charRace === "Halfling" && charGender === "Female"){
     charName = halflingFemaleNames[getRandNumber(halflingFemaleNames.length)];
-  } else if (getRace === "Dwarf" && getGender === "Female"){
+  } else if (charRace === "Dwarf" && charGender === "Female"){
     charName = halflingFemaleNames[getRandNumber(halflingFemaleNames.length)];
-  } else if (getRace === "Elf" && getGender === "Female"){
+  } else if (charRace === "Elf" && charGender === "Female"){
     charName = elfFemaleNames[getRandNumber(elfFemaleNames.length)];
-  } else if (getRace === "Orc" && getGender === "Female"){
+  } else if (charRace === "Orc" && charGender === "Female"){
     charName = orcFemaleNames[getRandNumber(orcFemaleNames.length)];
-  } else if (getRace === "Gnome" && getGender === "Female"){
+  } else if (charRace === "Gnome" && charGender === "Female"){
     charName = gnomeFemaleNames[getRandNumber(gnomeFemaleNames.length)];
   }
   return charName;
@@ -79,13 +84,18 @@ const getName = () => {
 
 // Randomize race/gender/name
 randomizeAllButton.addEventListener('click', function(){
+  getRace();
+  getGender();
   getName();
+  getBiography();
+  getTrait();
+  getPower();
   heading.innerText = `Character sheet for ${charName}`
-  subheading.innerText = `the ${getGender} ${getRace}`;
+  subheading.innerText = `the ${charGender} ${charRace}`;
   nameText.innerText = `${charName}`
-  genderText.innerText = `${getGender}`;
-  raceText.innerText = `${getRace}`;
-  powerText.innerText = `${getPower}`;
-  traitsText.innerText = `${getTrait}`;
-  backgroundText.innerText = `${getBiography}`
+  genderText.innerText = `${charGender}`;
+  raceText.innerText = `${charRace}`;
+  powerText.innerText = `${charPower}`;
+  traitsText.innerText = `${charTrait}`;
+  backgroundText.innerText = `${charBio}`
 });
