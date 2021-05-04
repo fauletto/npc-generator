@@ -7,21 +7,33 @@
 
 /* Utility Classes */
 .container {
-  background-color: #fff;
-  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  background-color: #788585;
+  padding: 50px;
   margin: auto;
 }
 
 /* Font Classes */
 .primary-font {
-  color: red;
+  color: #fff;
+}
+
+.strong-font {
+  font-weight: 900;
+}
+
+.light-text {
+  font-weight: 100;
 }
 
 /* Main Head */
 #main-heading {
   text-align: center;
+  align-items: center;
+  justify-content: center;
   padding-top: 4rem;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 /* Sub Head */
@@ -29,13 +41,15 @@
   text-align: center;
   padding: 1rem;
   margin-bottom: 20px;
-  color: red;
+  color: #fff;
 }
 
 /* Navbar */
 #main-nav {
   display: flex;
   background: #453f3c;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-item {
@@ -72,7 +86,7 @@
 }
 
 /* Randomize button */
-#randomizeAll {
+#randomize-all {
   display: block;
   padding: 20px;
   margin-top: 50px;
@@ -84,8 +98,26 @@
   color: #fff;
 }
 
-#randomizeAll:hover {
+#randomize-all:hover {
   cursor: pointer;
   background-color: #333;
   color: #fff;
+}
+
+/* Info Section */
+.info-container {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: 1px solid #333;
+  border-radius: 5px;
+  width: 67%;
+  background-color: #38302e;
+  color: #ccdad1;
+  padding: 10px;
+}
+
+.info-container p {
+  padding: 10px;
+  text-align: justify;
 }
