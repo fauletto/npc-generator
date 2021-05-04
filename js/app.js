@@ -3,8 +3,14 @@ const nameInput = document.querySelector('#char-name');
 const heading = document.querySelector('#main-heading')
 const classInput = document.querySelector('#char-class')
 const subheading = document.querySelector('#class-h2');
-const randomizeAllButton = document.querySelector('#randomizeAll');
-const biography = document.querySelector('#backgroundInfo');
+const randomizeAllButton = document.querySelector('#randomize-all');
+const biography = document.querySelector('#background-info');
+const nameText = document.querySelector('#name-text');
+const genderText = document.querySelector('#gender-text');
+const raceText = document.querySelector('#race-text');
+const powerText = document.querySelector('#power-text');
+const traitsText = document.querySelector('#traits-text');
+const backgroundText = document.querySelector('#background-text');
 
 // Get random number from 0-n
 let getRandNumber = (n) =>{
@@ -13,7 +19,7 @@ let getRandNumber = (n) =>{
 
 //Declare variables to randomize:
 const npcRace = ["Human", "Halfling", "Dwarf", "Elf", "Orc", "Gnome"];
-const npcPowerLevel = ["Weak", "Average", "Strong", "Extreme", "Demigod"];
+const npcPowerLevel = ["Weak (-2 to all stats)", "Average (+0 to all stats)", "Strong (+2 to all stats)", "Extreme (+4 to all stats)", "Demigod (+6 to all stats)"];
 const npcGender = ["Male", "Female"];
 const npcTrait = ["Selfish", "Altruistic", "Confident", "Overconfident", "Naive", "Wise", "Friendly", "Quiet", "Shy", "Flirty"];
 const npcBackground = ["was raised in a small village.", "found a magic sword and was granted immense power.", "grew rich from an inheritance.", "has many lovers.", "wants revenge against any and all enemies.", "was raised in an orphange.", "has a curse.", "was sired by a great hero.", "was sired by a great villain", "works in a shop in a small village."];
@@ -37,6 +43,9 @@ let charName;
 const getRace = npcRace[getRandNumber(npcRace.length)];
 const getGender = npcGender[getRandNumber(npcGender.length)];
 const getBiography = npcBackground[getRandNumber(npcBackground.length)];
+const getPower = npcPowerLevel[getRandNumber(npcPowerLevel.length)];
+const getTrait = npcTrait[getRandNumber(npcTrait.length)];
+
 
 //Generate a random name from a list of names
 const getName = () => {
@@ -73,5 +82,10 @@ randomizeAllButton.addEventListener('click', function(){
   getName();
   heading.innerText = `Character sheet for ${charName}`
   subheading.innerText = `the ${getGender} ${getRace}`;
-  biography.innerText = `${charName} ${getBiography}`
+  nameText.innerText = `${charName}`
+  genderText.innerText = `${getGender}`;
+  raceText.innerText = `${getRace}`;
+  powerText.innerText = `${getPower}`;
+  traitsText.innerText = `${getTrait}`;
+  backgroundText.innerText = `${getBiography}`
 });
