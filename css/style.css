@@ -13,8 +13,9 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #364156;
-  padding: 50px;
+  padding: 30px;
   margin: auto;
+  height: auto;
 }
 
 /* Font Classes */
@@ -37,6 +38,7 @@ body {
   justify-content: center;
   padding-top: 1rem;
   margin-top: 5px;
+  font-size: 2rem;
 }
 
 /* Sub Head */
@@ -50,17 +52,14 @@ body {
 /* Navbar */
 #main-nav {
   display: flex;
-  background: #364156;
+  background:  rgb(17, 21, 28);
   align-items: center;
   justify-content: center;
 }
 
 .nav-item {
-  display: inline-block;
   padding: 20px;
-  margin-right: 20px;
-  background-color: rgba(17, 21, 28, 0.85);
-  border-radius: 5px;
+  list-style: none;
 }
 
 .nav-item .current {
@@ -103,7 +102,7 @@ body {
 
 #randomize-all:hover {
   cursor: pointer;
-  background-color: rgba(125, 78, 87, 0.85);
+  background-color: rgba(66, 73, 85, 0.85);
   color: #fff;
 }
 
@@ -129,12 +128,32 @@ body {
 footer {
   display: flex;
   background-color: rgba(17, 21, 28, 1);
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+#social-container{
+  display: flex;
+  width: 67%;
+  justify-content: space-evenly;
 }
 
 #twitter-link {
   text-decoration: none;
-  color: #1da1f2;
+  color: rgb(29, 161, 242);
   padding-top: 20px;
   padding-bottom: 20px;
-  margin: auto;
+}
+
+#twitter-link:hover{
+  color: rgba(29, 161, 242, .85);
+}
+#email-link {
+  text-decoration: none;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#email-link:hover{
+  color: #EA4335;
 }

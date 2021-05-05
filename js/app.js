@@ -31,12 +31,12 @@ const elfMaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
 const orcMaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
 const gnomeMaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
 //Declare lists of random female names
-const humanFemaleNames = ["Frank", "Ryan", "Robert", "Christopher", "Harold", "Arthur", "Gilbert"];
-const halflingFemaleNames = ["John", "Paul", "George", "Ringo", "Frodo", "Samwise", "Peregrin", "Meriadoc", "Bilbo"];
-const dwarfFemaleNames = ["Gimli", "Gloin", "Thorin", "Dwalin"];
-const elfFemaleNames = ["Legolas", "Galadriel", "Elrond", "Glorfindel"];
-const orcFemaleNames = ["Garrosh", "Grom", "Orgrim", "Durotan"];
-const gnomeFemaleNames = ["Simon", "Alvin", "Theodore", "Garfield"];
+const humanFemaleNames = ["Camille", "Armine", "Joselyn", "Moira", "Regina", "Sibylle", "Emerald"];
+const halflingFemaleNames = ["Jessica", "Engelberga", "Theoderada", "Rachel", "Leesha", "Jenna", "Marigold", "Kayla", "Destiny"];
+const dwarfFemaleNames = ["Brangilda", "Hatahilda", "Lorseabela", "Broumelda"];
+const elfFemaleNames = ["Elanalue", "Renestrae", "Selussa", "Geminara"];
+const orcFemaleNames = ["Mogak", "Shagar", "Glasha", "Nargol"];
+const gnomeFemaleNames = ["Smyddna", "Lommut", "Sninbem", "Ibladus"];
 let charName;
 let charGender;
 let charRace;
@@ -44,15 +44,29 @@ let charBio;
 let charPower;
 let charTrait;
 
-//Get the race and gender of the character to determine which name lists to pull from
-const getRace = () => {charRace = npcRace[getRandNumber(npcRace.length)]};
-const getGender = () => {charGender = npcGender[getRandNumber(npcGender.length)]};
-const getBiography = () => {charBio = npcBackground[getRandNumber(npcBackground.length)]};
-const getPower = () => {charPower = npcPowerLevel[getRandNumber(npcPowerLevel.length)]};
-const getTrait = () => {charTrait = npcTrait[getRandNumber(npcTrait.length)]};
+//Funtions that use RNG to determine and print biographyy
+const getRace = () => {
+  charRace = npcRace[getRandNumber(npcRace.length)];
+  raceText.innerText = `${charRace}`;
+};
+const getGender = () => {
+  charGender = npcGender[getRandNumber(npcGender.length)];
+  genderText.innerText = `${charGender}`;
+};
+const getBiography = () => {
+  charBio = npcBackground[getRandNumber(npcBackground.length)];
+  backgroundText.innerText = `${charName} ${charBio}`;
+};
+const getPower = () => {
+  charPower = npcPowerLevel[getRandNumber(npcPowerLevel.length)];
+  powerText.innerText = `${charPower}`;
+};
+const getTrait = () => {
+  charTrait = npcTrait[getRandNumber(npcTrait.length)];
+  traitsText.innerText = `${charTrait}`;
+};
 
-
-//Generate a random name from a list of names
+// Generate a random name from a list of names and print the name
 const getName = () => {
   if (charRace === "Human" && charGender === "Male") {
     charName = humanMaleNames[getRandNumber(humanMaleNames.length)];
@@ -79,6 +93,9 @@ const getName = () => {
   } else if (charRace === "Gnome" && charGender === "Female"){
     charName = gnomeFemaleNames[getRandNumber(gnomeFemaleNames.length)];
   }
+  heading.innerText = `Character sheet for ${charName}`;
+  subheading.innerText = `the ${charGender} ${charRace}`;
+  nameText.innerText = `${charName}`;
   return charName;
 };
 
@@ -90,12 +107,5 @@ randomizeAllButton.addEventListener('click', function(){
   getBiography();
   getTrait();
   getPower();
-  heading.innerText = `Character sheet for ${charName}`
-  subheading.innerText = `the ${charGender} ${charRace}`;
-  nameText.innerText = `${charName}`
-  genderText.innerText = `${charGender}`;
-  raceText.innerText = `${charRace}`;
-  powerText.innerText = `${charPower}`;
-  traitsText.innerText = `${charTrait}`;
-  backgroundText.innerText = `${charBio}`
 });
+
