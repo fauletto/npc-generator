@@ -27,6 +27,63 @@
         RPG NPC Generator
       </h1>
       <h2 id="class-h2">Click the button below to generate a new NPC!</h2>
+      <form action="" class="char-input-form">
+        <label for="char-name-entry">Character Name: </label>
+        <input type="text" name="char-name-entry" id="char-name-input">
+        <label for="gender-entry">Gender: </label>
+        <select name="gender-entry" id="gender-input">
+          <option value="random-gender">Random</option>
+          <option value="male-entry">Male</option>
+          <option value="female-entry">Female</option>
+        </select>
+        <label for="race-entry">Race: </label>
+        <select name="race-entry" id="race-input">
+          <option value="random-race">Random</option>
+          <option value="human-entry">Human</option>
+          <option value="halfing-entry">Halfling</option>
+          <option value="dwarf-entry">Dwarf</option>
+          <option value="elf-entry">Elf</option>
+          <option value="orc-entry">Orc</option>
+          <option value="gnome-entry">Gnome</option>
+        </select>
+        <label for="power-entry">Power Level: </label>
+        <select name="power-entry" id="power-input">
+          <option value="random-power">Random</option>
+          <option value="weak-entry">Weak (-2 to all stats)</option>
+          <option value="average-entry">Average (+0 to all stats)</option>
+          <option value="strong-entry">Strong (+2 to all stats)</option>
+          <option value="extreme-entry">Extreme (+4 to all stats)</option>
+          <option value="demigod-entry">Demigod (+6 to all stats)</option>
+        </select>
+        <label for="trait-entry">Character Trait: </label>
+        <select name="trait-entry" id="trait-input">
+          <option value="random-trait">Random</option>
+          <option value="selfish-trait">Selfish</option>
+          <option value="altruistic-trait">Altruistic</option>
+          <option value="confident-trait">Confident</option>
+          <option value="overconfident-trait">Overconfident</option>
+          <option value="naive-trait">Naive</option>
+          <option value="wise-trait">Wise</option>
+          <option value="friendly-trait">Friendly</option>
+          <option value="quiet-trait">Quiet</option>
+          <option value="shy-trait">Shy</option>
+          <option value="flirty-trait">Flirty</option>
+        </select>
+        <label for="background-entry">Background: </label>
+        <select name="background-entry" id="background-input">
+          <option value="random-background">Random</option>
+          <option value="village-background"> was raised in a small village.</option>
+          <option value="sword-background"> found a magic sword and was granted immense power.</option>
+          <option value="inheritance-background"> grew rich from an inheritance.</option>
+          <option value="polygamist-background"> has many lovers.</option>
+          <option value="revenge-background"> wants revenge against any and all enemies.</option>
+          <option value="orphan-background"> was raised in an orphanage.</option>
+          <option value="curse-background"> has a curse.</option>
+          <option value="hero-background"> was sired by a great hero.</option>
+          <option value="villain-background"> was sired by a great villain.</option>
+          <option value="shopkeep-background"> works in a shop in a small village.</option>
+        </select>
+      </form>
       <section class="info-container">
         <p class="strong-font" id="char-name">
           Name: <span class="light-text" id="name-text"></span>
