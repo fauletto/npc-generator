@@ -8,6 +8,7 @@
 /* Utility Classes */
 body {
   font-family: "Roboto", sans-serif;
+  background-color: rgba(17, 21, 28, 1);
 }
 .container {
   display: flex;

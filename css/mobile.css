@@ -1,13 +1,12 @@
 @media only screen 
   and (min-device-width: 320px) 
-
+  and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .container{
       margin: 0;
       padding: 10px;
-      height: 82vh;
+      min-height: 80vh;
     }
-
     .nav-item a {
       font-size: 1.15rem;
     }
@@ -16,7 +15,6 @@
       width: 100%;
       margin: 0;
     }
-
     .info-container p{
       padding: 5px;
     }
