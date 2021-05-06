@@ -20,16 +20,16 @@ body {
   justify-content: space-evenly;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
 }
 
-.form-container{
+.form-container {
   display: flex;
   flex-direction: column;
   margin-right: 5px;
   flex: 1;
-  background-color:rgba(17, 21, 28, 0.85);
+  background-color: rgba(17, 21, 28, 0.85);
   color: #fff;
   border-radius: 5px;
   padding: 5px;
@@ -69,7 +69,7 @@ body {
 /* Navbar */
 #main-nav {
   display: flex;
-  background:  rgb(17, 21, 28);
+  background: rgb(17, 21, 28);
   align-items: center;
   justify-content: center;
 }
@@ -91,7 +91,7 @@ body {
 
 /* Input Section */
 .form-container input,
-.form-container select{
+.form-container select {
   display: block;
   width: 100%;
   padding: 5px;
@@ -108,7 +108,7 @@ body {
 }
 
 #form-heading,
-#info-heading{
+#info-heading {
   font-size: 1.25rem;
   text-align: center;
   margin-bottom: 5px;
@@ -156,7 +156,7 @@ body {
   flex: 1;
 }
 
-.border{
+.border {
   border: 1px #fff solid;
 }
 
@@ -165,17 +165,17 @@ body {
   text-align: left;
 }
 
-#stats-heading{
+#stats-heading {
   font-size: 1.25rem;
   text-align: center;
   margin-bottom: 5px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-#char-stats{
+#char-stats {
   list-style: none;
   width: 34%;
   padding: 10px;
@@ -192,7 +192,7 @@ footer {
   height: 100%;
 }
 
-#social-container{
+#social-container {
   display: flex;
   width: 67%;
   justify-content: space-evenly;
@@ -205,8 +205,8 @@ footer {
   padding-bottom: 20px;
 }
 
-#twitter-link:hover{
-  color: rgba(29, 161, 242, .85);
+#twitter-link:hover {
+  color: rgba(29, 161, 242, 0.85);
 }
 #email-link {
   text-decoration: none;
@@ -214,6 +214,6 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#email-link:hover{
-  color: #EA4335;
+#email-link:hover {
+  color: #ea4335;
 }

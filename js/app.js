@@ -36,6 +36,7 @@ const npcPowerLevel = ["Weak (-2 to all stats)", "Average (+0 to all stats)", "S
 const npcGender = ["Male", "Female"];
 const npcTrait = ["Selfish", "Altruistic", "Confident", "Overconfident", "Naive", "Wise", "Friendly", "Quiet", "Shy", "Flirty"];
 const npcBackground = ["was raised in a small village.", "found a magic sword and was granted immense power.", "grew rich from an inheritance.", "has many lovers.", "wants revenge against any and all enemies.", "was raised in an orphange.", "has a curse.", "was sired by a great hero.", "was sired by a great villain", "works in a shop in a small village."];
+
 //Declare lists of random names
 const names = {
   Male: {
@@ -105,8 +106,6 @@ const stats ={
     Wisdom: 12,
     Charisma: 12
   }
-
-
 }
 let charName;
 let charGender;

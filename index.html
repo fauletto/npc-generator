@@ -8,7 +8,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
     </style>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="/css/mobile.css" />
     <script
       src="https://kit.fontawesome.com/ca4f060bcb.js"
       crossorigin="anonymous"
@@ -28,99 +28,131 @@
       </h1>
       <h2 id="class-h2">Click the button below to generate a new NPC!</h2>
       <div class="flex-container">
-      <section class="form-container">
-        <h3 id="form-heading">Character Input</h3>
-        <form action="" class="char-input-form">
-          <label for="char-name-entry">Character Name: </label>
-          <input type="text" name="char-name-entry" id="char-name-input" placeholder="Leave this field blank to generate a name.">
-          <label for="gender-entry">Gender: </label>
-          <select name="gender-entry" id="gender-input">
-            <option value="Random">Random</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          <label for="race-entry">Race: </label>
-          <select name="race-entry" id="race-input">
-            <option value="Random">Random</option>
-            <option value="Human">Human</option>
-            <option value="Halfling">Halfling</option>
-            <option value="Dwarf">Dwarf</option>
-            <option value="Elf">Elf</option>
-            <option value="Orc">Orc</option>
-            <option value="Gnome">Gnome</option>
-          </select>
-          <label for="power-entry">Power Level: </label>
-          <select name="power-entry" id="power-input">
-            <option value="Random">Random</option>
-            <option value="Weak (-2 to all stats)">Weak (-2 to all stats)</option>
-            <option value="Average (+0 to all stats)">Average (+0 to all stats)</option>
-            <option value="Strong (+2 to all stats)">Strong (+2 to all stats)</option>
-            <option value="Extreme (+4 to all stats)">Extreme (+4 to all stats)</option>
-            <option value="Demigod (+6 to all stats)">Demigod (+6 to all stats)</option>
-          </select>
-          <label for="trait-entry">Character Trait: </label>
-          <select name="trait-entry" id="trait-input">
-            <option value="Random">Random</option>
-            <option value="Selfish">Selfish</option>
-            <option value="Altruistic">Altruistic</option>
-            <option value="Confident">Confident</option>
-            <option value="Overconfident">Overconfident</option>
-            <option value="Naive">Naive</option>
-            <option value="Wise">Wise</option>
-            <option value="Friendly">Friendly</option>
-            <option value="Quiet">Quiet</option>
-            <option value="Shy">Shy</option>
-            <option value="Flirty">Flirty</option>
-          </select>
-          <label for="background-entry">Background: </label>
-          <select name="background-entry" id="background-input">
-            <option value="Random">Random</option>
-            <option value="was raised in a small village."> was raised in a small village.</option>
-            <option value="found a magic sword and was granted immense power."> found a magic sword and was granted immense power.</option>
-            <option value="grew rich from an inheritance."> grew rich from an inheritance.</option>
-            <option value="has many lovers."> has many lovers.</option>
-            <option value="wants revenge against any and all enemies."> wants revenge against any and all enemies.</option>
-            <option value="was raised in an orphanage."> was raised in an orphanage.</option>
-            <option value="has a curse."> has a curse.</option>
-            <option value="was sired by a great hero."> was sired by a great hero.</option>
-            <option value="was sired by a great villain."> was sired by a great villain.</option>
-            <option value="works in a shop in a small village."> works in a shop in a small village.</option>
-          </select>
-        </form>
-      </section>
-      <section class="info-container">
-        <h3 id="info-heading">Character Information</h3>
-        <p class="strong-font" id="char-name">
-          Name: <span class="light-text" id="name-text"></span>
-        </p>
-        <p class="strong-font" id="char-gender">
-          Gender: <span class="light-text" id="gender-text"></span>
-        </p>
-        <p class="strong-font" id="char-race">
-          Race: <span class="light-text" id="race-text"></span>
-        </p>
-        <p class="strong-font" id="char-power">
-          Power Level: <span class="light-text" id="power-text"></span>
-        </p>
-        <p class="strong-font" id="char-traits">
-          Character Trait: <span class="light-text" id="traits-text"></span>
-        </p>
-        <p class="strong-font" id="char-background">
-          Background: <span class="light-text" id="background-text"></span>
-        </p>
-        <div id="stats-container">
-          <h3 id="stats-heading" class="hidden">Character Stats:</h3>
-          <ul id="char-stats">
-            <li id="char-strength"></li>
-            <li id="char-dexterity"></li>
-            <li id="char-constitution"></li>
-            <li id="char-intellect"></li>
-            <li id="char-wisdom"></li>
-            <li id="char-charisma"></li>
-          </ul>
-        </div>
-      </section>
-
+        <section class="form-container">
+          <h3 id="form-heading">Character Input</h3>
+          <form action="" class="char-input-form">
+            <label for="char-name-entry">Character Name: </label>
+            <input
+              type="text"
+              name="char-name-entry"
+              id="char-name-input"
+              placeholder="Leave this field blank to generate a name."
+            />
+            <label for="gender-entry">Gender: </label>
+            <select name="gender-entry" id="gender-input">
+              <option value="Random">Random</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <label for="race-entry">Race: </label>
+            <select name="race-entry" id="race-input">
+              <option value="Random">Random</option>
+              <option value="Human">Human</option>
+              <option value="Halfling">Halfling</option>
+              <option value="Dwarf">Dwarf</option>
+              <option value="Elf">Elf</option>
+              <option value="Orc">Orc</option>
+              <option value="Gnome">Gnome</option>
+            </select>
+            <label for="power-entry">Power Level: </label>
+            <select name="power-entry" id="power-input">
+              <option value="Random">Random</option>
+              <option value="Weak (-2 to all stats)">
+                Weak (-2 to all stats)
+              </option>
+              <option value="Average (+0 to all stats)">
+                Average (+0 to all stats)
+              </option>
+              <option value="Strong (+2 to all stats)">
+                Strong (+2 to all stats)
+              </option>
+              <option value="Extreme (+4 to all stats)">
+                Extreme (+4 to all stats)
+              </option>
+              <option value="Demigod (+6 to all stats)">
+                Demigod (+6 to all stats)
+              </option>
+            </select>
+            <label for="trait-entry">Character Trait: </label>
+            <select name="trait-entry" id="trait-input">
+              <option value="Random">Random</option>
+              <option value="Selfish">Selfish</option>
+              <option value="Altruistic">Altruistic</option>
+              <option value="Confident">Confident</option>
+              <option value="Overconfident">Overconfident</option>
+              <option value="Naive">Naive</option>
+              <option value="Wise">Wise</option>
+              <option value="Friendly">Friendly</option>
+              <option value="Quiet">Quiet</option>
+              <option value="Shy">Shy</option>
+              <option value="Flirty">Flirty</option>
+            </select>
+            <label for="background-entry">Background: </label>
+            <select name="background-entry" id="background-input">
+              <option value="Random">Random</option>
+              <option value="was raised in a small village.">
+                was raised in a small village.
+              </option>
+              <option
+                value="found a magic sword and was granted immense power."
+              >
+                found a magic sword and was granted immense power.
+              </option>
+              <option value="grew rich from an inheritance.">
+                grew rich from an inheritance.
+              </option>
+              <option value="has many lovers.">has many lovers.</option>
+              <option value="wants revenge against any and all enemies.">
+                wants revenge against any and all enemies.
+              </option>
+              <option value="was raised in an orphanage.">
+                was raised in an orphanage.
+              </option>
+              <option value="has a curse.">has a curse.</option>
+              <option value="was sired by a great hero.">
+                was sired by a great hero.
+              </option>
+              <option value="was sired by a great villain.">
+                was sired by a great villain.
+              </option>
+              <option value="works in a shop in a small village.">
+                works in a shop in a small village.
+              </option>
+            </select>
+          </form>
+        </section>
+        <section class="info-container">
+          <h3 id="info-heading">Character Information</h3>
+          <p class="strong-font" id="char-name">
+            Name: <span class="light-text" id="name-text"></span>
+          </p>
+          <p class="strong-font" id="char-gender">
+            Gender: <span class="light-text" id="gender-text"></span>
+          </p>
+          <p class="strong-font" id="char-race">
+            Race: <span class="light-text" id="race-text"></span>
+          </p>
+          <p class="strong-font" id="char-power">
+            Power Level: <span class="light-text" id="power-text"></span>
+          </p>
+          <p class="strong-font" id="char-traits">
+            Character Trait: <span class="light-text" id="traits-text"></span>
+          </p>
+          <p class="strong-font" id="char-background">
+            Background: <span class="light-text" id="background-text"></span>
+          </p>
+          <div id="stats-container">
+            <h3 id="stats-heading" class="hidden">Character Stats:</h3>
+            <ul id="char-stats">
+              <li id="char-strength"></li>
+              <li id="char-dexterity"></li>
+              <li id="char-constitution"></li>
+              <li id="char-intellect"></li>
+              <li id="char-wisdom"></li>
+              <li id="char-charisma"></li>
+            </ul>
+          </div>
+        </section>
       </div>
       <section id="dice-roll-section">
         <button id="randomize-all">Randomize</button>
@@ -129,9 +161,11 @@
     <footer>
       <div id="social-container">
         <a id="twitter-link" target="#" href="https://twitter.com/fauletto"
-        ><i class="fab fa-twitter fa-3x"></i></a>
-      <a id="email-link" target="#" href="mailto:fauletto@email.com"
-        ><i class="fas fa-envelope fa-3x"></i></a>
+          ><i class="fab fa-twitter fa-3x"></i
+        ></a>
+        <a id="email-link" target="#" href="mailto:fauletto@email.com"
+          ><i class="fas fa-envelope fa-3x"></i
+        ></a>
       </div>
     </footer>
 
