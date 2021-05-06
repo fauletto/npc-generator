@@ -16,7 +16,15 @@ const raceText = document.querySelector('#race-text');
 const powerText = document.querySelector('#power-text');
 const traitsText = document.querySelector('#traits-text');
 const backgroundText = document.querySelector('#background-text');
-
+const charStats = document.querySelector('#char-stats');
+const charStrength = document.querySelector('#char-strength');
+const charDexterity = document.querySelector('#char-dexterity');
+const charConstitution = document.querySelector('#char-constitution');
+const charIntellect = document.querySelector('#char-intellect');
+const charWisdom = document.querySelector('#char-wisdom');
+const charCharisma = document.querySelector('#char-charisma');
+const statsList = document.querySelector('#char-stats');
+const statsHeading = document.querySelector('#stats-heading');
 // Get random number from 0-n
 let getRandNumber = (n) =>{
   return Math.floor(Math.random() * n);
@@ -46,6 +54,59 @@ const names = {
     Orc: ["Mogak", "Shagar", "Glasha", "Nargol"],
     Gnome:["Smyddna", "Lommut", "Sninbem", "Ibladus"]
   }
+}
+
+const stats ={
+  Human: {
+    Strength: 10,
+    Dexterity: 10,
+    Constitution: 10,
+    Intellect: 10,
+    Wisdom: 10,
+    Charisma: 10
+  },
+  Halfling: {
+    Strength: 8,
+    Dexterity: 12,
+    Constitution: 8,
+    Intellect: 10,
+    Wisdom: 12,
+    Charisma: 10
+  },
+  Dwarf: {
+    Strength: 10,
+    Dexterity: 8,
+    Constitution: 12,
+    Intellect: 10,
+    Wisdom: 10,
+    Charisma: 10
+  },
+  Elf: {
+    Strength: 8,
+    Dexterity: 12,
+    Constitution: 10,
+    Intellect: 10,
+    Wisdom: 10,
+    Charisma: 10
+  },
+  Orc: {
+    Strength: 12,
+    Dexterity: 10,
+    Constitution: 12,
+    Intellect: 8,
+    Wisdom: 10,
+    Charisma: 8
+  },
+  Gnome: {
+    Strength: 8,
+    Dexterity: 8,
+    Constitution: 8,
+    Intellect: 12,
+    Wisdom: 12,
+    Charisma: 12
+  }
+
+
 }
 let charName;
 let charGender;
@@ -110,6 +171,23 @@ const getName = () => {
   return charName;
 };
 
+const getStats = () =>{
+  charStats.classList.add('border');
+  statsHeading.classList.remove('hidden');
+  let strengthResult = stats[charRace].Strength;
+  let dexterityResult = stats[charRace].Dexterity;
+  let constitutionResult = stats[charRace].Constitution;
+  let intellectResult = stats[charRace].Intellect;
+  let wisdomResult = stats[charRace].Wisdom;
+  let charismaResult = stats[charRace].Charisma;
+  charStrength.innerText = `Strength: ${strengthResult}`;
+  charDexterity.innerText = `Dexterity: ${dexterityResult}`;
+  charConstitution.innerText = `Constitution: ${constitutionResult}`;
+  charIntellect.innerText = `Intellect: ${intellectResult}`;
+  charWisdom.innerText = `Wisdom: ${wisdomResult}`;
+  charCharisma.innerText = `Charisma: ${charismaResult}`;
+}
+
 // Randomize race/gender/name
 randomizeAllButton.addEventListener('click', function(){
   getRace();
@@ -118,5 +196,6 @@ randomizeAllButton.addEventListener('click', function(){
   getTrait();
   getPower();
   getBiography();
+  getStats();
 });
 

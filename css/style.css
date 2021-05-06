@@ -107,6 +107,13 @@ body {
   padding: 10px;
 }
 
+#form-heading,
+#info-heading{
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 #char-form input {
   display: block;
   width: 33%;
@@ -149,9 +156,32 @@ body {
   flex: 1;
 }
 
+.border{
+  border: 1px #fff solid;
+}
+
 .info-container p {
   padding: 10px;
-  text-align: justify;
+  text-align: left;
+}
+
+#stats-heading{
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.hidden{
+  display: none;
+}
+
+#char-stats{
+  list-style: none;
+  width: 34%;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 /* Footer */

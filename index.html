@@ -29,6 +29,7 @@
       <h2 id="class-h2">Click the button below to generate a new NPC!</h2>
       <div class="flex-container">
       <section class="form-container">
+        <h3 id="form-heading">Character Input</h3>
         <form action="" class="char-input-form">
           <label for="char-name-entry">Character Name: </label>
           <input type="text" name="char-name-entry" id="char-name-input" placeholder="Leave this field blank to generate a name.">
@@ -88,6 +89,7 @@
         </form>
       </section>
       <section class="info-container">
+        <h3 id="info-heading">Character Information</h3>
         <p class="strong-font" id="char-name">
           Name: <span class="light-text" id="name-text"></span>
         </p>
@@ -106,6 +108,17 @@
         <p class="strong-font" id="char-background">
           Background: <span class="light-text" id="background-text"></span>
         </p>
+        <div id="stats-container">
+          <h3 id="stats-heading" class="hidden">Character Stats:</h3>
+          <ul id="char-stats">
+            <li id="char-strength"></li>
+            <li id="char-dexterity"></li>
+            <li id="char-constitution"></li>
+            <li id="char-intellect"></li>
+            <li id="char-wisdom"></li>
+            <li id="char-charisma"></li>
+          </ul>
+        </div>
       </section>
 
       </div>
