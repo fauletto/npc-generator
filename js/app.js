@@ -99,7 +99,11 @@ const getTrait = () => {
 // Generate a random name from a list of names and print the name
 const getName = () => {
   let availableNames = names[charGender][charRace];
-  charName = availableNames[getRandNumber(availableNames.length)];
+  if(nameInput.value === ""){
+    charName = availableNames[getRandNumber(availableNames.length)];
+  }else{
+    charName = nameInput.value;
+  }
   heading.innerText = `Character sheet for ${charName}`;
   subheading.innerText = `the ${charGender} ${charRace}`;
   nameText.innerText = `${charName}`;

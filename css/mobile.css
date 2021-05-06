@@ -12,11 +12,22 @@
     }
     .info-container{
       background-color: rgba(17, 21, 28, 0.85);
-      width: 100%;
-      margin: 0;
+      margin-left: 0;
+      padding: 10px;
     }
     .info-container p{
       padding: 5px;
+    }
+    .flex-container{
+      flex-direction: column;
+    }
+    .form-container{
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    #randomize-all{
+      margin-top: 10px;
+      width: 100%;
     }
 
 }

@@ -17,6 +17,22 @@ body {
   padding: 30px;
   margin: auto;
   height: auto;
+  justify-content: space-evenly;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+  flex: 1;
+  background-color:rgba(17, 21, 28, 0.85);
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 /* Font Classes */
@@ -73,10 +89,22 @@ body {
   color: #fff;
 }
 
+/* Input Section */
+.form-container input,
+.form-container select{
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 /* Character Info Section */
 #char-info {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  padding: 10px;
 }
 
 #char-form input {
@@ -91,11 +119,11 @@ body {
 /* Randomize button */
 #randomize-all {
   display: block;
+  width: 34%;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
   border-radius: 5px;
   background-color: rgba(17, 21, 28, 0.85);
   color: #fff;
@@ -111,13 +139,14 @@ body {
 .info-container {
   align-items: center;
   justify-content: center;
-  margin: auto;
   border: 1px solid #333;
   border-radius: 5px;
-  width: 67%;
   background-color: rgba(17, 21, 28, 0.85);
   color: #ccdad1;
-  padding: 10px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-left: 5px;
+  flex: 1;
 }
 
 .info-container p {
