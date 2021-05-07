@@ -31,7 +31,6 @@ const statsHeading = document.querySelector('#stats-heading');
 let getRandNumber = (n) =>{
   return Math.floor(Math.random() * n);
 }
-
 //Declare variables to randomize:
 const npcRace = ["Human", "Halfling", "Dwarf", "Elf", "Orc", "Gnome"];
 const npcPowerLevel = ["Weak (-2 to all stats)", "Average (+0 to all stats)", "Strong (+2 to all stats)", "Extreme (+4 to all stats)", "Demigod (+6 to all stats)"];
@@ -39,6 +38,7 @@ const npcGender = ["Male", "Female"];
 const npcTrait = ["Selfish", "Altruistic", "Confident", "Overconfident", "Naive", "Wise", "Friendly", "Quiet", "Shy", "Flirty"];
 const npcAlignment = ["Lawful Good", "Lawful Neutral", "Lawful Evil", "Neutral Good", "Neutral", "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"];
 const npcBackground = ["was raised in a small village.", "found a magic sword and was granted immense power.", "grew rich from an inheritance.", "has many lovers.", "wants revenge against any and all enemies.", "was raised in an orphange.", "has a curse.", "was sired by a great hero.", "was sired by a great villain", "works in a shop in a small village."];
+const statList = ["Strength", "Dexterity", "Constitution", "Intellect", "Wisdom", "Charisma"];
 //Declare lists of random names
 const names = {
   Male: {
@@ -160,9 +160,29 @@ const getName = () => {
   return charName;
 };
 
+// FIGURE OUT HOW TO MAKE THIS WORK!!
+// let randStat;
+// const getRandStat = () => {
+//   randStat = statList[getRandNumber(statList.length)];
+//   return randStat;
+// }
+
+// const addPoint = () =>{
+//   if(charPower === "Strong"){
+//     for(let i =0; i <= 2;){
+//       getRandStat();
+//       stats[charRace][randStat] += 1;
+//     }
+//   } else {
+//     console.log("No increase");
+//   }
+// }
+
+//Generate stats based on race
 const getStats = () =>{
   charStats.classList.add('border');
   statsHeading.classList.remove('hidden');
+  addPoint();
   let strengthResult = stats[charRace].Strength;
   let dexterityResult = stats[charRace].Dexterity;
   let constitutionResult = stats[charRace].Constitution;
@@ -177,7 +197,7 @@ const getStats = () =>{
   charCharisma.innerText = `Charisma: ${charismaResult}`;
 }
 
-// Randomize race/gender/name
+// Randomize all character attributes
 randomizeAllButton.addEventListener('click', function(){
   getRace();
   getGender();
