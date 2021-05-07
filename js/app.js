@@ -182,7 +182,6 @@ const getName = () => {
 const getStats = () =>{
   charStats.classList.add('border');
   statsHeading.classList.remove('hidden');
-  addPoint();
   let strengthResult = stats[charRace].Strength;
   let dexterityResult = stats[charRace].Dexterity;
   let constitutionResult = stats[charRace].Constitution;
