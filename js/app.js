@@ -139,6 +139,27 @@ const getBiography = () => {
 };
 const getPower = () => {
   charPower = getCharAttribute(powerInput, npcPowerLevel);
+  // if(charPower === "Weak (-2 to all stats)"){
+  //   for(let i = 0; i < 2; i++){
+  //     getRandStat();
+  //     stats[charRace][randStat] -=1;
+  //   }
+  // }else if(charPower === "Strong (+2 to all stats)"){
+  //   for(let i = 0; i < 2; i++){
+  //     getRandStat();
+  //     stats[charRace][randStat] += 1;
+  //   }
+  // }else if(charPower === "Extreme (+4 to all stats)"){
+  //   for(let i = 0; i < 4; i++){
+  //     getRandStat();
+  //     stats[charRace][randStat] += 1;
+  //   }
+  // }else if(charPower === "Demigod (+6 to all stats)"){
+  //   for(let i = 0; i < 6; i++){
+  //     getRandStat();
+  //     stats[charRace][randStat] += 1;
+  //   }
+  // }
   powerText.innerText = `${charPower}`;
 };
 const getTrait = () => {
@@ -167,17 +188,6 @@ const getName = () => {
 //   return randStat;
 // }
 
-// const addPoint = () =>{
-//   if(charPower === "Strong"){
-//     for(let i =0; i <= 2;){
-//       getRandStat();
-//       stats[charRace][randStat] += 1;
-//     }
-//   } else {
-//     console.log("No increase");
-//   }
-// }
-
 //Generate stats based on race
 const getStats = () =>{
   charStats.classList.add('border');
@@ -195,6 +205,8 @@ const getStats = () =>{
   charWisdom.innerText = `Wisdom: ${wisdomResult}`;
   charCharisma.innerText = `Charisma: ${charismaResult}`;
 }
+
+
 
 // Randomize all character attributes
 randomizeAllButton.addEventListener('click', function(){
