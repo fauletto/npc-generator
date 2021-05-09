@@ -4,6 +4,7 @@ const raceInput = document.querySelector('#race-input');
 const genderInput = document.querySelector('#gender-input');
 const powerInput = document.querySelector('#power-input');
 const traitInput = document.querySelector('#trait-input');
+const alignmentInput = document.querySelector('#alignment-input')
 const backgroundInput = document.querySelector('#background-input');
 const heading = document.querySelector('#main-heading');
 const classInput = document.querySelector('#char-class');
@@ -15,6 +16,7 @@ const genderText = document.querySelector('#gender-text');
 const raceText = document.querySelector('#race-text');
 const powerText = document.querySelector('#power-text');
 const traitsText = document.querySelector('#traits-text');
+const alignmentText = document.querySelector('#alignment-text');
 const backgroundText = document.querySelector('#background-text');
 const charStats = document.querySelector('#char-stats');
 const charStrength = document.querySelector('#char-strength');
@@ -29,14 +31,14 @@ const statsHeading = document.querySelector('#stats-heading');
 let getRandNumber = (n) =>{
   return Math.floor(Math.random() * n);
 }
-
 //Declare variables to randomize:
 const npcRace = ["Human", "Halfling", "Dwarf", "Elf", "Orc", "Gnome"];
 const npcPowerLevel = ["Weak (-2 to all stats)", "Average (+0 to all stats)", "Strong (+2 to all stats)", "Extreme (+4 to all stats)", "Demigod (+6 to all stats)"];
 const npcGender = ["Male", "Female"];
 const npcTrait = ["Selfish", "Altruistic", "Confident", "Overconfident", "Naive", "Wise", "Friendly", "Quiet", "Shy", "Flirty"];
+const npcAlignment = ["Lawful Good", "Lawful Neutral", "Lawful Evil", "Neutral Good", "Neutral", "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"];
 const npcBackground = ["was raised in a small village.", "found a magic sword and was granted immense power.", "grew rich from an inheritance.", "has many lovers.", "wants revenge against any and all enemies.", "was raised in an orphange.", "has a curse.", "was sired by a great hero.", "was sired by a great villain", "works in a shop in a small village."];
-
+const statList = ["Strength", "Dexterity", "Constitution", "Intellect", "Wisdom", "Charisma"];
 //Declare lists of random names
 const names = {
   Male: {
@@ -113,63 +115,70 @@ let charRace;
 let charBio;
 let charPower;
 let charTrait;
+let charAlignment;
 
-//Funtions that use RNG to determine and print biographyy
+//Funtions that use RNG to determine and print biography
+const getCharAttribute = (inputElement, attrValues) =>{
+  return inputElement.value === "Random" || 
+  inputElement.value === ""
+  ? attrValues[getRandNumber(attrValues.length)]
+  : inputElement.value;
+}
+
 const getRace = () => {
-  if(raceInput.value === "Random"){
-    charRace = npcRace[getRandNumber(npcRace.length)];
-  }else{
-    charRace = raceInput.value;
-  }
+  charRace = getCharAttribute(raceInput, npcRace);
   raceText.innerText = `${charRace}`;
 };
 const getGender = () => {
-  if(genderInput.value === "Random"){
-    charGender = npcGender[getRandNumber(npcGender.length)];
-  }else{
-    charGender = genderInput.value;
-  }
+  charGender = getCharAttribute(genderInput, npcGender);
   genderText.innerText = `${charGender}`;
 };
 const getBiography = () => {
-  if(backgroundInput.value === "Random"){
-    charBio = npcBackground[getRandNumber(npcBackground.length)];
-  }else{
-    charBio = backgroundInput.value;
-  }
+  charBio = getCharAttribute(backgroundInput, npcBackground);
   backgroundText.innerText = `${charName} ${charBio}`;
 };
 const getPower = () => {
-  if(powerInput.value === "Random"){
-    charPower = npcPowerLevel[getRandNumber(npcPowerLevel.length)];
-  }else{
-    charPower = powerInput.value;
-  }
+  charPower = getCharAttribute(powerInput, npcPowerLevel);
   powerText.innerText = `${charPower}`;
 };
 const getTrait = () => {
-  if(traitInput.value === "Random"){
-    charTrait = npcTrait[getRandNumber(npcTrait.length)];
-  }else{
-    charTrait = traitInput.value;
-  }
+  charTrait = getCharAttribute(traitInput, npcTrait);
   traitsText.innerText = `${charTrait}`;
 };
+const getAlignment = () =>{
+  charAlignment = getCharAttribute(alignmentInput, npcAlignment);
+  alignmentText.innerText = `${charAlignment}`;
+}
 
 // Generate a random name from a list of names and print the name
 const getName = () => {
   let availableNames = names[charGender][charRace];
-  if(nameInput.value === ""){
-    charName = availableNames[getRandNumber(availableNames.length)];
-  }else{
-    charName = nameInput.value;
-  }
+  charName = getCharAttribute(nameInput, availableNames);
   heading.innerText = `Character sheet for ${charName}`;
   subheading.innerText = `the ${charGender} ${charRace}`;
   nameText.innerText = `${charName}`;
   return charName;
 };
 
+// FIGURE OUT HOW TO MAKE THIS WORK!!
+// let randStat;
+// const getRandStat = () => {
+//   randStat = statList[getRandNumber(statList.length)];
+//   return randStat;
+// }
+
+// const addPoint = () =>{
+//   if(charPower === "Strong"){
+//     for(let i =0; i <= 2;){
+//       getRandStat();
+//       stats[charRace][randStat] += 1;
+//     }
+//   } else {
+//     console.log("No increase");
+//   }
+// }
+
+//Generate stats based on race
 const getStats = () =>{
   charStats.classList.add('border');
   statsHeading.classList.remove('hidden');
@@ -187,12 +196,13 @@ const getStats = () =>{
   charCharisma.innerText = `Charisma: ${charismaResult}`;
 }
 
-// Randomize race/gender/name
+// Randomize all character attributes
 randomizeAllButton.addEventListener('click', function(){
   getRace();
   getGender();
   getName();
   getTrait();
+  getAlignment();
   getPower();
   getBiography();
   getStats();
