@@ -137,29 +137,9 @@ const getBiography = () => {
   charBio = getCharAttribute(backgroundInput, npcBackground);
   backgroundText.innerText = `${charName} ${charBio}`;
 };
+let isNewChar = true;
 const getPower = () => {
   charPower = getCharAttribute(powerInput, npcPowerLevel);
-  // if(charPower === "Weak (-2 to all stats)"){
-  //   for(let i = 0; i < 2; i++){
-  //     getRandStat();
-  //     stats[charRace][randStat] -=1;
-  //   }
-  // }else if(charPower === "Strong (+2 to all stats)"){
-  //   for(let i = 0; i < 2; i++){
-  //     getRandStat();
-  //     stats[charRace][randStat] += 1;
-  //   }
-  // }else if(charPower === "Extreme (+4 to all stats)"){
-  //   for(let i = 0; i < 4; i++){
-  //     getRandStat();
-  //     stats[charRace][randStat] += 1;
-  //   }
-  // }else if(charPower === "Demigod (+6 to all stats)"){
-  //   for(let i = 0; i < 6; i++){
-  //     getRandStat();
-  //     stats[charRace][randStat] += 1;
-  //   }
-  // }
   powerText.innerText = `${charPower}`;
 };
 const getTrait = () => {
@@ -181,23 +161,27 @@ const getName = () => {
   return charName;
 };
 
-// FIGURE OUT HOW TO MAKE THIS WORK!!
-// let randStat;
-// const getRandStat = () => {
-//   randStat = statList[getRandNumber(statList.length)];
-//   return randStat;
-// }
+let strengthResult;
+let dexterityResult;
+let constitutionResult;
+let intellectResult;
+let wisdomResult;
+let charismaResult;
+
+
 
 //Generate stats based on race
 const getStats = () =>{
   charStats.classList.add('border');
   statsHeading.classList.remove('hidden');
-  let strengthResult = stats[charRace].Strength;
-  let dexterityResult = stats[charRace].Dexterity;
-  let constitutionResult = stats[charRace].Constitution;
-  let intellectResult = stats[charRace].Intellect;
-  let wisdomResult = stats[charRace].Wisdom;
-  let charismaResult = stats[charRace].Charisma;
+  if(isNewChar){
+    strengthResult = stats[charRace].Strength;
+    dexterityResult = stats[charRace].Dexterity;
+    constitutionResult = stats[charRace].Constitution;
+    intellectResult = stats[charRace].Intellect;
+    wisdomResult = stats[charRace].Wisdom;
+    charismaResult = stats[charRace].Charisma;
+  }
   charStrength.innerText = `Strength: ${strengthResult}`;
   charDexterity.innerText = `Dexterity: ${dexterityResult}`;
   charConstitution.innerText = `Constitution: ${constitutionResult}`;
